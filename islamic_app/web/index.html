@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- web/index.html -->
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="نور الإسلام - تطبيق إسلامي متكامل">
+
+  <!-- iOS meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="نور الإسلام">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Title -->
+  <title>نور الإسلام</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- RTL support -->
+  <style>
+    body {
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background-color: #0A0F1A;
+    }
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0A0F1A;
+    }
+    .loading-text {
+      color: #C9A84C;
+      font-size: 24px;
+      font-family: serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">
+    <div class="loading-text">﷽</div>
+  </div>
+
+  <script>
+    // Remove loading screen when Flutter loads
+    window.addEventListener('flutter-first-frame', function () {
+      var loading = document.getElementById('loading');
+      if (loading) loading.style.display = 'none';
+    });
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
